@@ -4,7 +4,7 @@ void squeezetwo(char s1[], char s2[]);
 
 main()
 {
-	char palavra[] = "rayssa peixoto mendes";
+	char palavra[] = "nasdfjherkjwencxvhuiwerikqwericsv";
 	char dicionario[] = "iey ";
 	int i;
 	printf("%s\n", palavra);

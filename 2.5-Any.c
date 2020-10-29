@@ -6,7 +6,7 @@ int any(char s1[], char s2[]);
 
 main()
 {
-	char palavra[] = "rayssa peixoto mendes";
+	char palavra[] = "sadfhjasdlfkajshdfwie cn";
 	char dicionario[] = "p";
 	int i;
 	printf("%s\n", palavra);
