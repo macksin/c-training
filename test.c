@@ -16,6 +16,13 @@ main()
 		putchar(i);
 	}
 	printf("\n");
+
+	printf("***********");
+
+	int j = 100;
+	int s = &j;
+	
+	printf("Memory Location: %d\n", s);	
 }
 
 int 
