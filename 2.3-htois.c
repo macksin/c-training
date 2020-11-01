@@ -4,7 +4,7 @@
  * Hexadecimal to integer value. P.60.
 **/
 
-long htoi(char s[]);
+long htoi(char *s);
 
 main()
 {
@@ -14,21 +14,21 @@ main()
 }
 
 long
-htoi(char s[])
+htoi(char *s)
 {
 	int i;
 	long n;
 	n = 0;
 	
-	for (i = 0; (s[i] >= '0' && s[i] <= '9') ||
-				(s[i] >= 'A' && s[i] <= 'F') ||
-				(s[i] >= 'a' && s[i] <= 'f'); ++i){
-		if (s[i] >= '0' && s[i] <= '9')
-			n = 16*n + (s[i] - '0');
-		else if (s[i] >= 'A' && s[i] <= 'F')
-			n = 16*n + (s[i] - 'A' + 10);
-		else if (s[i] >= 'a' && s[i] <= 'f')
-			n = 16*n + (s[i] - 'a' + 10);
+	for (i = 0; (*s >= '0' && *s <= '9') ||
+				(*s >= 'A' && *s <= 'F') ||
+				(*s >= 'a' && *s <= 'f'); *s++){
+		if (*s >= '0' && *s <= '9')
+			n = 16*n + (*s - '0');
+		else if (*s >= 'A' && *s <= 'F')
+			n = 16*n + (*s - 'A' + 10);
+		else if (*s >= 'a' && *s <= 'f')
+			n = 16*n + (*s - 'a' + 10);
 	}
 	return n;
 }
