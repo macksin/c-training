@@ -10,17 +10,28 @@ void writelines1(char *lineptr[], int nlines);
 
 main()
 {
-		char *s[MAXL];
-		char line[MAXL];
-		getline1(line, MAXCONTENT, 0);
-		s[0] = line;
-		writelines1(s, 1);
-		getline1(line, MAXCONTENT, strlen(line));
-		s[1] = line;
-		writelines1(s, 2);
-		printf("TESTING\n");
-		printf("%s\n", s[0]);
-		printf("%s\n", s[1]);
+	char *s[MAXL];
+	char line[MAXL];
+//	getline1(line, MAXCONTENT, 0);
+//	s[0] = line;
+//	getline1(line, MAXCONTENT, strlen(line));
+//	s[1] = line;
+	readlines(s, MAXCONTENT, line);
+	writelines1(s, 2);
+}
+
+int
+readlines(char *s[], int maxl, char *line)
+{
+	int len;
+	int n = 0;
+	int nlines = 0;
+	
+	while((len = getline1(line, MAXCONTENT, n)) > 0){
+		s[nlines++] = line+n;
+		n += len;
+	}
+	return nlines;
 }
 
 /* Modified to write where we point to,
